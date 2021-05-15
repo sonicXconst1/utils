@@ -1,7 +1,11 @@
+pub fn almost_equal(left: f64, right: f64) -> bool {
+    (left - right).abs() < f64::EPSILON
+}
+
 #[cfg(test)]
-mod tests {
+mod test {
     #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+    fn almost_equal() {
+        assert!(super::almost_equal(0.1 + 0.2, 0.3))
     }
 }
